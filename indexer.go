@@ -54,6 +54,7 @@ func createIndex() {
 }
 
 func NewArkIndexer(ctx context.Context, embedder *ark.Embedder) *ri.Indexer {
+	createIndex()
 	indexer, err := ri.NewIndexer(ctx, &ri.IndexerConfig{
 		Client:    redisClient,
 		KeyPrefix: "eino:",
